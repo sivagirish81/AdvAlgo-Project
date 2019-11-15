@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -10,7 +11,7 @@ public:
     virtual int get_num_hash(int,int) = 0;
 
     /*Get the size of the hash table to be used*/
-    virtual int get_size(int,int) = 0;
+    virtual int get_size(int,float) = 0;
 
     /*Insert item into filter*/
     virtual int insert(char*);
