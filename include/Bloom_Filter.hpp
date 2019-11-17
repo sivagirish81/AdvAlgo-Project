@@ -16,6 +16,9 @@ public:
     /*Insert item into filter*/
     virtual int insert(string);
 
+    /*Set Array Containing Hash Functions*/
+    void set_hash_functions(vector<Hash_Functions> Hashes);
+
     /*Check whether an element is in the set or not*/
     virtual bool Check(string);
 

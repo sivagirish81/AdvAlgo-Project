@@ -21,6 +21,7 @@ class Bloom_Filter_Implementation : public Bloom_Filter
         Bloom_Filter_Implementation();
         int set_num_hash(int , int);
         int set_size(int , float);
+        void set_hash_functions(vector<Hash_Functions> Hashes);
         int insert(string);
         bool Check(string);
         ~Bloom_Filter_Implementation();
@@ -42,6 +43,12 @@ int Bloom_Filter_Implementation::set_num_hash(int n,int m)
 int Bloom_Filter_Implementation::set_size(int n,float p)
 {
     return size = int(-1*(n*log(p))/(pow(log(2),2)));
+}
+
+void Bloom_Filter_Implementation::set_hash_functions(vector<Hash_Functions> Hash_funcs)
+{
+    Hashes = Hash_funcs;
+    return;
 }
 
 int Bloom_Filter_Implementation::insert(string txt)
