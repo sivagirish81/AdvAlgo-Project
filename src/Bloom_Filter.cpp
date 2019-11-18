@@ -40,9 +40,8 @@ Bloom_Filter_Implementation::Bloom_Filter_Implementation()
 int Bloom_Filter_Implementation::set_num_hash(int n,int m)
 { 
     //num_of_hash = int((m/n)*log(2));
-    //cout << num_of_hash <<endl;
     //Bloom_array = new bool(100);
-    num_of_hash=2;
+    num_of_hash=7;
     return 1;
 }
 
@@ -54,7 +53,7 @@ int Bloom_Filter_Implementation::get_num_hash()
 int Bloom_Filter_Implementation::set_size(int n,float p)
 {
     //size = int(-1*(n*log(p))/(pow(log(2),2)));
-    size=1024;
+    size=536764;
     Bloom_array  = (bool*)calloc(size,sizeof(bool));
     return 1;
 }
@@ -72,12 +71,6 @@ void Bloom_Filter_Implementation::set_hash_functions(vector<Hash_Functions> Hash
 
 int Bloom_Filter_Implementation::insert(string txt)
 {
-    /*
-    cout << txt << endl;
-    cout << (Hashes[0])(txt) <<endl;
-    cout << (Hashes[1])(txt) <<endl;
-    cout << "************" <<endl;
-    */
     for (auto i = Hashes.begin();i!=Hashes.end();i++)
     {
         Bloom_array[((*i)(txt))%1024]=true;
