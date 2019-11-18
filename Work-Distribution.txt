@@ -6,4 +6,4 @@
 	+Hash function 1
 
 #Sahazeer
-	+Hash Fnction 2
+	+Hash Function 2
