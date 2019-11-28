@@ -34,7 +34,6 @@ Bloom_Filter_Implementation::Bloom_Filter_Implementation()
     item_count=0;
 }
 
-
 int Bloom_Filter_Implementation::set_size()
 {
     //size = int(-1*(n*log(p))/(pow(log(2),2)));
