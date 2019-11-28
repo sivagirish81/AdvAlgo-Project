@@ -67,19 +67,21 @@ int main()
      cout<<"_________________________________________________________________________________________________________________\n\n";
     printf("Total Actual Non Malicious URLs: %d\n\n",total_non_mal);
     printf("Filters as Malicious URLs: %d\n",count(result1.begin(),result1.end(),true));
-    printf("True Positive : %f\n",float(count(result1.begin(),result1.end(),true)/(float)total_non_mal));
+    printf("False Positive : %f\n",float(count(result1.begin(),result1.end(),true)/(float)total_non_mal));
     cout<<endl;
     printf("Filters as Non-Malicious URLs: %d\n",count(result1.begin(),result1.end(),false));
     printf("False Negative : %f\n",float(count(result1.begin(),result1.end(),false)/total_non_mal));
     cout<<endl;
     cout<<"_________________________________________________________________________________________________________________\n\n";
+    /*
     printf("Total Actual Malicious URLs: %d\n\n",total_mal);
     printf("Filters as Malicious URLs: %d\n",count(result2.begin(),result2.end(),true));
     printf("True Positive : %f\n",float(count(result2.begin(),result2.end(),true)/(float)total_mal));
     cout<<endl;
     printf("Filters as Non-Malicious URLs: %d\n",count(result2.begin(),result2.end(),false));
     printf("False Negative : %f\n",float(count(result2.begin(),result2.end(),false)/total_mal));
-         cout<<"_________________________________________________________________________________________________________________\n\n";
+    cout<<"_________________________________________________________________________________________________________________\n\n";
+    */
     return 0;
 
 }
