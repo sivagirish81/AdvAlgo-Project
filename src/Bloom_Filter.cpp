@@ -8,7 +8,7 @@ using namespace std;
 
 typedef unsigned int (*Hash_Functions)(string);
 
-class Bloom_Filter_Implementation : public Bloom_Filter
+class Bloom_Filter_Implementation 
 {
     private :
         int size;
@@ -19,10 +19,7 @@ class Bloom_Filter_Implementation : public Bloom_Filter
         vector<Hash_Functions> Hashes;
     public :
         Bloom_Filter_Implementation();
-        int set_num_hash(int , int);
-        int get_num_hash();
-        int set_size(int , float);
-        int get_size();
+        int set_size();
         void set_hash_functions(vector<Hash_Functions> Hashes);
         int insert(string);
         bool Check(string);
@@ -32,35 +29,18 @@ class Bloom_Filter_Implementation : public Bloom_Filter
 Bloom_Filter_Implementation::Bloom_Filter_Implementation()
 {
     size=0;
-    num_of_hash=0;
+    num_of_hash=8;
     false_Prob=0;
     item_count=0;
 }
 
-int Bloom_Filter_Implementation::set_num_hash(int n,int m)
-{ 
-    //num_of_hash = int((m/n)*log(2));
-    //Bloom_array = new bool(100);
-    num_of_hash=7;
-    return 1;
-}
 
-int Bloom_Filter_Implementation::get_num_hash()
-{ 
-    return num_of_hash;
-}
-
-int Bloom_Filter_Implementation::set_size(int n,float p)
+int Bloom_Filter_Implementation::set_size()
 {
     //size = int(-1*(n*log(p))/(pow(log(2),2)));
-    size=536764;
+    size=551238;
     Bloom_array  = (bool*)calloc(size,sizeof(bool));
     return 1;
-}
-
-int Bloom_Filter_Implementation::get_size()
-{ 
-    return size;
 }
 
 void Bloom_Filter_Implementation::set_hash_functions(vector<Hash_Functions> Hash_funcs)
@@ -73,15 +53,16 @@ int Bloom_Filter_Implementation::insert(string txt)
 {
     for (auto i = Hashes.begin();i!=Hashes.end();i++)
     {
-        Bloom_array[((*i)(txt))%1024]=true;
+        Bloom_array[((*i)(txt))%size]=true;
     }
+    return 0;
 }
 
 bool Bloom_Filter_Implementation::Check(string txt)
 {
     for (auto i = Hashes.begin();i!=Hashes.end();i++)
     {
-        if (Bloom_array[((*i)(txt))%1024]==false)
+        if (Bloom_array[((*i)(txt))%size]==false)
             return false;
     }
     return true;
