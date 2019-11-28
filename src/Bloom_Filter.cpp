@@ -39,7 +39,7 @@ Bloom_Filter_Implementation::Bloom_Filter_Implementation()
 
 int Bloom_Filter_Implementation::set_num_hash(int n,int m)
 { 
-    //num_of_hash = int((m/n)*log(2));
+    num_of_hash = int((m/n)*(log(2));
     //Bloom_array = new bool(100);
     num_of_hash=7;
     return 1;
