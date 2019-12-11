@@ -1,0 +1,9 @@
+
+#Siva
+	+Will Code Bloom Filter With a basic function(Hash Function 3)
+	
+#Sangam
+	+Hash function 1
+
+#Sahazeer
+	+Hash Function 2
